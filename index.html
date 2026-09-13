@@ -20,6 +20,9 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- Chart.js for Interactive Data Visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <style>
     /* ==========================================================================
        DESIGN SYSTEM - Inspired by Abdulelah Alshahrani Portfolio
@@ -57,6 +60,8 @@
       --accent-indigo-bg: #EEF2FF;
       --accent-emerald: #059669;
       --accent-emerald-bg: #ECFDF5;
+      --accent-purple: #7C3AED;
+      --accent-purple-bg: #F5F3FF;
 
       --border-subtle: #E2E8F0;
       --border-card: #E5EDF6;
@@ -232,9 +237,9 @@
     .nav-link {
       text-decoration: none;
       color: var(--text-secondary);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      padding: 7px 13px;
+      padding: 7px 12px;
       border-radius: var(--radius-full);
       transition: var(--transition-base);
       white-space: nowrap;
@@ -781,104 +786,103 @@
       line-height: 1.35;
     }
 
-    /* Projects Horizontal Carousel */
-    .projects-scroll-track {
-      display: flex;
+    /* ==========================================================================
+       SECTION: EXECUTIVE DATA ANALYTICS & CHARTS DASHBOARD (NEW VISUAL EFFECTS)
+       ========================================================================== */
+    .analytics-section {
+      background: var(--bg-surface-subtle);
+      border-top: 1px solid var(--border-card);
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 8px 4px 20px 4px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      margin-top: 12px;
     }
 
-    .projects-scroll-track::-webkit-scrollbar {
-      display: none;
-    }
-
-    .project-card-bucket {
-      flex: 0 0 380px;
-      scroll-snap-align: start;
+    .analytics-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-card);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition-smooth);
+      border-radius: var(--radius-xl);
+      padding: 26px 24px;
+      box-shadow: var(--shadow-md);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: var(--transition-smooth);
+      position: relative;
     }
 
-    .project-card-bucket:hover {
-      transform: translateY(-4px);
+    .analytics-card:hover {
+      transform: translateY(-3px);
       box-shadow: var(--shadow-lg);
       border-color: var(--border-highlight);
     }
 
-    .project-category-tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      background: var(--accent-amber-bg);
-      color: var(--accent-amber);
-      margin-bottom: 14px;
-      align-self: flex-start;
+    .card-header-flex {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
     }
 
-    .project-title {
+    .chart-card-title {
       font-family: var(--font-heading);
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 800;
       color: var(--text-primary);
-      line-height: 1.3;
-      margin-bottom: 12px;
       letter-spacing: -0.3px;
+      line-height: 1.3;
     }
 
-    .project-summary {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 20px;
+    .chart-card-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
     }
 
-    .project-outcome-box {
-      background: var(--bg-surface-subtle);
-      border-left: 3px solid var(--primary-blue);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 12px 16px;
-      display: flex;
+    .chart-badge-pill {
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      margin-top: auto;
-    }
-
-    .outcome-number {
-      font-family: var(--font-heading);
-      font-size: 1.3rem;
-      font-weight: 800;
+      gap: 5px;
+      background: var(--primary-blue-light);
       color: var(--primary-blue);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      flex-shrink: 0;
       white-space: nowrap;
     }
 
-    .outcome-text {
+    .chart-canvas-wrapper {
+      position: relative;
+      height: 250px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chart-footer-caption {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
       font-size: 0.78rem;
       color: var(--text-secondary);
-      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     /* ==========================================================================
        SECTION: VISUAL CAREER TRAJECTORY & STEPPER (EXACT RESUME ROLES)
        ========================================================================== */
     .career-visual-section {
-      background: var(--bg-surface-subtle);
-      border-top: 1px solid var(--border-card);
-      border-bottom: 1px solid var(--border-card);
+      background: var(--bg-canvas);
       position: relative;
       overflow: hidden;
     }
@@ -1154,6 +1158,97 @@
       box-shadow: var(--shadow-xs);
     }
 
+    /* Projects Horizontal Carousel */
+    .projects-scroll-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 8px 4px 20px 4px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .projects-scroll-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .project-card-bucket {
+      flex: 0 0 380px;
+      scroll-snap-align: start;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card-bucket:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--border-highlight);
+    }
+
+    .project-category-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: var(--accent-amber-bg);
+      color: var(--accent-amber);
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .project-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .project-outcome-box {
+      background: var(--bg-surface-subtle);
+      border-left: 3px solid var(--primary-blue);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .outcome-number {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary-blue);
+      white-space: nowrap;
+    }
+
+    .outcome-text {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
     /* ==========================================================================
        CORE STRENGTHS / PILLARS SECTION
        ========================================================================== */
@@ -1415,6 +1510,9 @@
       .portrait-viewport {
         height: 420px;
       }
+      .analytics-grid {
+        grid-template-columns: 1fr;
+      }
       .career-progression-bar {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -1441,6 +1539,9 @@
       }
       .portrait-viewport {
         height: 340px;
+      }
+      .analytics-grid {
+        grid-template-columns: 1fr;
       }
       .career-progression-bar {
         grid-template-columns: 1fr;
@@ -1475,6 +1576,7 @@
       <ul class="nav-links">
         <li><a href="#overview" class="nav-link active">Overview</a></li>
         <li><a href="#metrics" class="nav-link">Leadership Metrics</a></li>
+        <li><a href="#analytics" class="nav-link">Analytics &amp; Graphs</a></li>
         <li><a href="#trajectory" class="nav-link">Career Trajectory</a></li>
         <li><a href="#projects" class="nav-link">Key Projects</a></li>
         <li><a href="#strengths" class="nav-link">Core Strengths</a></li>
@@ -1651,6 +1753,118 @@
           <div class="metric-stat-number">25+</div>
           <div class="metric-stat-label">Finance Professionals</div>
           <div class="metric-stat-sub">Mentored &amp; High-Performance Teams</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION: EXECUTIVE DATA ANALYTICS & VISUAL CHARTS DASHBOARD (NEW SECTION)
+       ========================================================================== -->
+  <section id="analytics" class="analytics-section">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="section-tag">EXECUTIVE ANALYTICS &amp; DATA INSIGHTS</span>
+          <h2 class="section-heading">Financial Leadership &amp; Operational Analytics</h2>
+          <p class="section-subtitle">Visual analysis of close cycle acceleration, multi-GAAP distribution, global entity scaling, and governance competencies.</p>
+        </div>
+      </div>
+
+      <!-- 2x2 Interactive Charts Grid -->
+      <div class="analytics-grid">
+
+        <!-- Chart 1: Financial Close Acceleration Line Chart -->
+        <div class="analytics-card">
+          <div>
+            <div class="card-header-flex">
+              <div>
+                <h3 class="chart-card-title">Close Acceleration Trajectory</h3>
+                <p class="chart-card-subtitle">Monthly Days to Close (Before vs. After Workiva &amp; BlackLine)</p>
+              </div>
+              <span class="chart-badge-pill">
+                <i data-lucide="trending-down" style="width: 14px; height: 14px;"></i>
+                <span>-60% Reduction</span>
+              </span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="closeAccelerationChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-footer-caption">
+            <i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: var(--accent-emerald);"></i>
+            <span>Replaced manual spreadsheets with real-time balance sheet governance &amp; continuous auditing.</span>
+          </div>
+        </div>
+
+        <!-- Chart 2: Multi-GAAP Distribution Doughnut Chart -->
+        <div class="analytics-card">
+          <div>
+            <div class="card-header-flex">
+              <div>
+                <h3 class="chart-card-title">Multi-GAAP Portfolio Breakdown</h3>
+                <p class="chart-card-subtitle">Global Legal Entity Accounting Frameworks</p>
+              </div>
+              <span class="chart-badge-pill">
+                <i data-lucide="pie-chart" style="width: 14px; height: 14px;"></i>
+                <span>20+ Entities</span>
+              </span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="gaapDistributionChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-footer-caption">
+            <i data-lucide="globe-2" style="width: 16px; height: 16px; color: var(--primary-blue);"></i>
+            <span>US GAAP (45%), IFRS (30%), Ind AS (25%) reconciled across local &amp; corporate ledgers.</span>
+          </div>
+        </div>
+
+        <!-- Chart 3: Entity Scale & Team Growth Grouped Bar Chart -->
+        <div class="analytics-card">
+          <div>
+            <div class="card-header-flex">
+              <div>
+                <h3 class="chart-card-title">Entity Scope vs. GCC Team Scale</h3>
+                <p class="chart-card-subtitle">Expansion of Span of Control &amp; Team Mentorship</p>
+              </div>
+              <span class="chart-badge-pill">
+                <i data-lucide="bar-chart-2" style="width: 14px; height: 14px;"></i>
+                <span>17+ Yrs Growth</span>
+              </span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="scaleGrowthChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-footer-caption">
+            <i data-lucide="users" style="width: 16px; height: 16px; color: var(--accent-indigo);"></i>
+            <span>Built 2 GCC Capability Centers from scratch, scaling high-performing teams to 25+ members.</span>
+          </div>
+        </div>
+
+        <!-- Chart 4: Executive Competency & Governance Radar Chart -->
+        <div class="analytics-card">
+          <div>
+            <div class="card-header-flex">
+              <div>
+                <h3 class="chart-card-title">Executive Competency Radar</h3>
+                <p class="chart-card-subtitle">Rigor across Technical Accounting, Audit &amp; Automation</p>
+              </div>
+              <span class="chart-badge-pill">
+                <i data-lucide="shield-check" style="width: 14px; height: 14px;"></i>
+                <span>100% Big 4 Audit</span>
+              </span>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="competencyRadarChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-footer-caption">
+            <i data-lucide="award" style="width: 16px; height: 16px; color: var(--accent-amber);"></i>
+            <span>100% clean Big 4 audit track record with zero material internal control deficiencies.</span>
+          </div>
         </div>
 
       </div>
@@ -2063,13 +2277,13 @@
 
   <!-- ==========================================================================
        JAVASCRIPT LOGIC
-       - Dynamic Career Trajectory Stepper with Exact Resume Work Experience
-       - Lucide Icons initialization
-       - Dark / Light Theme toggle with localStorage persistence
+       - Chart.js Executive Analytics Renderers
+       - Dynamic Career Trajectory Stepper
+       - Theme Toggle & Dynamic Chart Palette Updates
        - Horizontal scroll navigation controls (Metrics & Projects)
        ========================================================================== -->
   <script>
-    // Exact Career History Data Extracted from Official Executive Resume
+    // Career History Data Extracted from Official Executive Resume
     const careerData = [
       {
         company: "JUMIO CORPORATION",
@@ -2235,22 +2449,242 @@
     }
 
     // Bind Stepper Clicks
-    stepperSteps.forEach(step => {
+    stepperSteps.forEach((step, idx) => {
       step.addEventListener('click', () => {
         stepperSteps.forEach(s => s.classList.remove('active'));
         step.classList.add('active');
-        const stepIndex = parseInt(step.getAttribute('data-step'), 10);
-        renderMilestone(stepIndex);
+        renderMilestone(idx);
       });
     });
 
     // Render Initial Milestone (Jumio)
     renderMilestone(0);
 
+    // ==========================================================================
+    // CHART.JS INITIALIZATIONS WITH THEME AWARE COLORS
+    // ==========================================================================
+    let chartInstances = {};
+
+    function getChartThemeColors(isDark) {
+      return {
+        textColor: isDark ? '#94A3B8' : '#4A5568',
+        headingColor: isDark ? '#F1F5F9' : '#0A192F',
+        gridColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 26, 78, 0.06)',
+        bluePrimary: isDark ? '#3B82F6' : '#0056B3',
+        blueLight: isDark ? 'rgba(59, 130, 246, 0.25)' : 'rgba(0, 86, 179, 0.15)',
+        accentTeal: '#0D9488',
+        accentAmber: '#D97706',
+        accentIndigo: '#4F46E5',
+        accentEmerald: '#059669'
+      };
+    }
+
+    function initAllCharts() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const c = getChartThemeColors(isDark);
+
+      // Destroy previous instances if re-initializing on theme switch
+      Object.values(chartInstances).forEach(inst => inst && inst.destroy());
+
+      // 1. Close Acceleration Line Chart
+      const ctxClose = document.getElementById('closeAccelerationChart')?.getContext('2d');
+      if (ctxClose) {
+        chartInstances.close = new Chart(ctxClose, {
+          type: 'line',
+          data: {
+            labels: ['Legacy Manual Close', 'SOP Standardization', 'BlackLine Implemented', 'Workiva Automation', 'Continuous Auditing'],
+            datasets: [{
+              label: 'Days to Close',
+              data: [15, 11, 7, 5, 4],
+              borderColor: c.bluePrimary,
+              backgroundColor: c.blueLight,
+              borderWidth: 3,
+              pointBackgroundColor: c.bluePrimary,
+              pointBorderColor: '#FFFFFF',
+              pointRadius: 6,
+              pointHoverRadius: 8,
+              fill: true,
+              tension: 0.35
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => ` Close Duration: ${ctx.raw} Business Days`
+                }
+              }
+            },
+            scales: {
+              x: {
+                grid: { color: c.gridColor },
+                ticks: { color: c.textColor, font: { family: 'Plus Jakarta Sans', size: 11 } }
+              },
+              y: {
+                min: 0,
+                max: 16,
+                grid: { color: c.gridColor },
+                ticks: {
+                  color: c.textColor,
+                  font: { family: 'Plus Jakarta Sans', size: 11 },
+                  callback: (val) => `${val} Days`
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // 2. Multi-GAAP Distribution Doughnut Chart
+      const ctxGaap = document.getElementById('gaapDistributionChart')?.getContext('2d');
+      if (ctxGaap) {
+        chartInstances.gaap = new Chart(ctxGaap, {
+          type: 'doughnut',
+          data: {
+            labels: ['US GAAP (US & Global)', 'IFRS (EMEA / APAC)', 'Ind AS / Local Statutory'],
+            datasets: [{
+              data: [45, 30, 25],
+              backgroundColor: [c.bluePrimary, c.accentTeal, c.accentIndigo],
+              borderColor: isDark ? '#0E1726' : '#FFFFFF',
+              borderWidth: 3,
+              hoverOffset: 6
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  color: c.textColor,
+                  font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' },
+                  padding: 14,
+                  usePointStyle: true
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => ` ${ctx.label}: ${ctx.raw}% of Entities`
+                }
+              }
+            },
+            cutout: '68%'
+          }
+        });
+      }
+
+      // 3. Entity Scope vs. GCC Team Scale Grouped Bar Chart
+      const ctxScale = document.getElementById('scaleGrowthChart')?.getContext('2d');
+      if (ctxScale) {
+        chartInstances.scale = new Chart(ctxScale, {
+          type: 'bar',
+          data: {
+            labels: ['Cambridge', 'Veolia', 'Clarivate', 'Jumio (Present)'],
+            datasets: [
+              {
+                label: 'Global Legal Entities',
+                data: [1, 4, 18, 20],
+                backgroundColor: c.bluePrimary,
+                borderRadius: 6
+              },
+              {
+                label: 'GCC Team Scale',
+                data: [11, 12, 20, 25],
+                backgroundColor: c.accentEmerald,
+                borderRadius: 6
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'top',
+                labels: {
+                  color: c.textColor,
+                  font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' },
+                  usePointStyle: true
+                }
+              }
+            },
+            scales: {
+              x: {
+                grid: { display: false },
+                ticks: { color: c.textColor, font: { family: 'Plus Jakarta Sans', size: 11 } }
+              },
+              y: {
+                min: 0,
+                max: 30,
+                grid: { color: c.gridColor },
+                ticks: { color: c.textColor, font: { family: 'Plus Jakarta Sans', size: 11 } }
+              }
+            }
+          }
+        });
+      }
+
+      // 4. Executive Competency Radar Chart
+      const ctxRadar = document.getElementById('competencyRadarChart')?.getContext('2d');
+      if (ctxRadar) {
+        chartInstances.radar = new Chart(ctxRadar, {
+          type: 'radar',
+          data: {
+            labels: ['Multi-GAAP Governance', 'Digital Close (Workiva)', 'Big 4 Audit (PwC)', 'Post-M&A Integration', 'Transfer Pricing & Tax', 'GCC Scale & Talent'],
+            datasets: [{
+              label: 'Leadership Benchmark',
+              data: [98, 95, 100, 94, 92, 96],
+              borderColor: c.bluePrimary,
+              backgroundColor: isDark ? 'rgba(59, 130, 246, 0.35)' : 'rgba(0, 86, 179, 0.22)',
+              borderWidth: 2,
+              pointBackgroundColor: c.bluePrimary,
+              pointBorderColor: '#FFFFFF',
+              pointRadius: 4
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false }
+            },
+            scales: {
+              r: {
+                angleLines: { color: c.gridColor },
+                grid: { color: c.gridColor },
+                pointLabels: {
+                  color: c.textColor,
+                  font: { family: 'Plus Jakarta Sans', size: 10.5, weight: '600' }
+                },
+                ticks: {
+                  display: false,
+                  min: 50,
+                  max: 100
+                }
+              }
+            }
+          }
+        });
+      }
+    }
+
+    // Initialize Charts on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      initAllCharts();
+    });
+    // Fallback if already loaded
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      initAllCharts();
+    }
+
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Dark / Light Theme Toggle
+    // Dark / Light Theme Toggle with Chart Palette Re-sync
     const themeToggleBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const htmlElement = document.documentElement;
@@ -2264,6 +2698,7 @@
         themeIcon.setAttribute('data-lucide', 'moon');
       }
       lucide.createIcons();
+      initAllCharts();
     }
 
     const savedTheme = localStorage.getItem('rs_theme') || 'light';
