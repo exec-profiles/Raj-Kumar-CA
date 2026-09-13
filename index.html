@@ -6,7 +6,7 @@
   <title>Rajkumar Singh, ACA | Associate Director – Global Controllership & Finance Operations</title>
   
   <!-- SEO & Social Meta -->
-  <meta name="description" content="Executive portfolio of Rajkumar Singh, ACA (Associate Director - India Finance Lead & Global Controllership). 17+ years scaling global accounting, multi-GAAP compliance, GCC buildouts, and digital finance transformation across Jumio, Clarivate, Veolia, and Cambridge University Press." />
+  <meta name="description" content="Executive portfolio of Rajkumar Singh, ACA (Associate Director - Global Accounting, India Finance Lead & Global Controllership). 17+ years scaling global accounting, multi-GAAP compliance, GCC buildouts, and digital finance transformation across Jumio, Clarivate, Veolia, and Cambridge University Press." />
   <meta property="og:title" content="Rajkumar Singh, ACA | Executive Finance Leader & Global Controllership" />
   <meta property="og:description" content="17+ Years Leadership across US GAAP, IFRS, Ind AS, GCC Buildout, Post-M&A Integration, and Digital Close Automation." />
   <meta property="og:type" content="website" />
@@ -239,7 +239,7 @@
       color: var(--text-secondary);
       font-size: 0.8rem;
       font-weight: 600;
-      padding: 7px 12px;
+      padding: 7px 11px;
       border-radius: var(--radius-full);
       transition: var(--transition-base);
       white-space: nowrap;
@@ -373,25 +373,36 @@
       line-height: 1.08;
       letter-spacing: -1.5px;
       color: var(--text-primary);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       text-transform: uppercase;
     }
 
     .hero-headline {
       font-family: var(--font-heading);
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--primary-blue);
       line-height: 1.35;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
       letter-spacing: -0.4px;
     }
 
+    .hero-tagline {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      background: var(--bg-surface-subtle);
+      border-left: 3px solid var(--primary-blue);
+      padding: 8px 14px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
     .hero-bio {
-      font-size: 1rem;
+      font-size: 0.96rem;
       color: var(--text-secondary);
       line-height: 1.65;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
       max-width: 620px;
     }
 
@@ -478,7 +489,7 @@
     .hero-quick-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 18px;
       font-size: 0.85rem;
       color: var(--text-secondary);
       padding-top: 18px;
@@ -787,7 +798,7 @@
     }
 
     /* ==========================================================================
-       SECTION: EXECUTIVE DATA ANALYTICS & CHARTS DASHBOARD (NEW VISUAL EFFECTS)
+       SECTION: EXECUTIVE DATA ANALYTICS & CHARTS DASHBOARD
        ========================================================================== */
     .analytics-section {
       background: var(--bg-surface-subtle);
@@ -879,7 +890,7 @@
     }
 
     /* ==========================================================================
-       SECTION: VISUAL CAREER TRAJECTORY & STEPPER (EXACT RESUME ROLES)
+       SECTION: VISUAL CAREER TRAJECTORY & STEPPER
        ========================================================================== */
     .career-visual-section {
       background: var(--bg-canvas);
@@ -971,7 +982,6 @@
       text-overflow: ellipsis;
     }
 
-    /* Visual Interactive Milestone Showcase Box */
     .milestone-detail-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-card);
@@ -1250,53 +1260,107 @@
     }
 
     /* ==========================================================================
-       CORE STRENGTHS / PILLARS SECTION
+       INDUSTRY DOMAINS & SKILLS MATRIX SECTION
        ========================================================================== */
-    .strengths-grid {
+    .skills-matrix-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
+      margin-top: 24px;
     }
 
-    .strength-card {
+    .matrix-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-card);
       border-radius: var(--radius-lg);
-      padding: 28px;
+      padding: 26px;
       box-shadow: var(--shadow-sm);
       transition: var(--transition-smooth);
     }
 
-    .strength-card:hover {
-      transform: translateY(-4px);
+    .matrix-card:hover {
+      transform: translateY(-3px);
       box-shadow: var(--shadow-md);
       border-color: var(--border-highlight);
     }
 
-    .strength-icon {
-      width: 48px;
-      height: 48px;
+    .matrix-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .matrix-icon {
+      width: 40px;
+      height: 40px;
       border-radius: var(--radius-md);
       background: var(--primary-blue-light);
       color: var(--primary-blue);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 18px;
+      flex-shrink: 0;
     }
 
-    .strength-title {
+    .matrix-title {
       font-family: var(--font-heading);
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.05rem;
+      font-weight: 800;
       color: var(--text-primary);
-      margin-bottom: 10px;
     }
 
-    .strength-desc {
+    .matrix-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .matrix-list li {
       font-size: 0.88rem;
       color: var(--text-secondary);
-      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .matrix-list li::before {
+      content: "•";
+      color: var(--primary-blue);
+      font-size: 1.2rem;
+    }
+
+    /* Industry Domain Pills */
+    .industry-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .industry-pill {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-full);
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-xs);
+      transition: var(--transition-base);
+    }
+
+    .industry-pill:hover {
+      background: var(--primary-blue-light);
+      color: var(--primary-blue);
+      border-color: rgba(0, 86, 179, 0.3);
+      transform: translateY(-2px);
     }
 
     /* ==========================================================================
@@ -1351,7 +1415,7 @@
     }
 
     /* ==========================================================================
-       EDUCATION & CREDENTIALS
+       EDUCATION & CERTIFICATIONS (EXACT DETAILS FROM RESUME)
        ========================================================================== */
     .edu-grid {
       display: grid;
@@ -1404,6 +1468,59 @@
 
     .edu-note {
       font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Certifications Grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .cert-card {
+      background: var(--bg-surface-subtle);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: var(--transition-base);
+    }
+
+    .cert-card:hover {
+      border-color: var(--primary-blue);
+      transform: translateY(-2px);
+    }
+
+    .cert-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary-blue-light);
+      color: var(--primary-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cert-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-name {
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .cert-org {
+      font-size: 0.78rem;
       color: var(--text-muted);
     }
 
@@ -1513,6 +1630,9 @@
       .analytics-grid {
         grid-template-columns: 1fr;
       }
+      .skills-matrix-grid {
+        grid-template-columns: 1fr;
+      }
       .career-progression-bar {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -1579,9 +1699,9 @@
         <li><a href="#analytics" class="nav-link">Analytics &amp; Graphs</a></li>
         <li><a href="#trajectory" class="nav-link">Career Trajectory</a></li>
         <li><a href="#projects" class="nav-link">Key Projects</a></li>
-        <li><a href="#strengths" class="nav-link">Core Strengths</a></li>
+        <li><a href="#skills" class="nav-link">Management Skills</a></li>
         <li><a href="#arsenal" class="nav-link">ERP &amp; Systems</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#education" class="nav-link">Education &amp; Certs</a></li>
         <li><a href="#contact" class="nav-link">Contact Hub</a></li>
       </ul>
 
@@ -1589,7 +1709,7 @@
         <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
           <i data-lucide="moon" id="themeIcon"></i>
         </button>
-        <a href="assets/Rajkumar_Singh_Executive_Resume.pdf" download="Rajkumar_Singh_Executive_Resume.pdf" class="btn-resume">
+        <a href="Rajkumar_Singh_Executive_Resume.pdf" download="Rajkumar_Singh_Executive_Resume.pdf" onclick="downloadExecutiveResume(event)" class="btn-resume">
           <i data-lucide="download" style="width: 15px; height: 15px;"></i>
           <span>Resume PDF</span>
         </a>
@@ -1615,14 +1735,18 @@
         </div>
 
         <h1 class="hero-name">RAJKUMAR SINGH</h1>
-        <h2 class="hero-headline">Associate Director – Global Controllership | Finance Operations | GCC Leadership | Transformation</h2>
+        <h2 class="hero-headline">Associate Director - Global Accounting – India Finance Lead / Global Controllership</h2>
+        
+        <div class="hero-tagline">
+          Trusted to deliver multi-GAAP financial governance, build 2 scalable GCC operations, and drive digital close transformation.
+        </div>
 
         <p class="hero-bio">
-          Accomplished and strategic Finance Leader &amp; Chartered Accountant with <strong>17+ years</strong> of progressive experience spearheading global accounting, controllership, financial governance, shared services, and finance transformation across multinational enterprises (<strong>Jumio Corporation</strong>, <strong>Clarivate</strong>, <strong>Veolia</strong>, <strong>Cambridge University Press</strong>, and <strong>First English / Faruqui &amp; Co.</strong>). Trusted to deliver multi-GAAP financial governance, build 2 scalable GCC operations, and drive digital close transformation.
+          Accomplished and strategic Finance Leader &amp; Chartered Accountant with <strong>17+ years</strong> of progressive experience spearheading global accounting, controllership, financial governance, shared services, and finance transformation across multinational organizations. Extensive expertise in building and scaling Global Capability Center (GCC) finance operations from inception, managing multi-country legal entities, and strengthening enterprise-wide financial control environments across <strong>Jumio Corporation</strong>, <strong>Clarivate</strong>, <strong>Veolia</strong>, <strong>Cambridge University Press</strong>, and <strong>First English / Faruqui &amp; Co.</strong>
         </p>
 
         <div class="hero-actions">
-          <a href="assets/Rajkumar_Singh_Executive_Resume.pdf" download="Rajkumar_Singh_Executive_Resume.pdf" class="btn-primary">
+          <a href="Rajkumar_Singh_Executive_Resume.pdf" download="Rajkumar_Singh_Executive_Resume.pdf" onclick="downloadExecutiveResume(event)" class="btn-primary">
             <i data-lucide="download" style="width: 18px; height: 18px;"></i>
             <span>Download Executive Resume</span>
           </a>
@@ -1746,7 +1870,7 @@
         <div class="metric-bucket-card">
           <div class="metric-stat-number">-40%</div>
           <div class="metric-stat-label">Close Cycle Time</div>
-          <div class="metric-stat-sub">Via Workiva &amp; BlackLine Automation</div>
+          <div class="metric-stat-sub">Via Workiva, BlackLine &amp; OneStream</div>
         </div>
 
         <div class="metric-bucket-card">
@@ -1760,7 +1884,7 @@
   </section>
 
   <!-- ==========================================================================
-       SECTION: EXECUTIVE DATA ANALYTICS & VISUAL CHARTS DASHBOARD (NEW SECTION)
+       SECTION: EXECUTIVE DATA ANALYTICS & CHARTS DASHBOARD
        ========================================================================== -->
   <section id="analytics" class="analytics-section">
     <div class="container">
@@ -1821,7 +1945,7 @@
           </div>
         </div>
 
-        <!-- Chart 3: Entity Scale & Team Growth Grouped Bar Chart -->
+        <!-- Chart 3: Entity Scope vs. GCC Team Scale Grouped Bar Chart -->
         <div class="analytics-card">
           <div>
             <div class="card-header-flex">
@@ -1872,7 +1996,7 @@
   </section>
 
   <!-- ==========================================================================
-       SECTION: VISUAL EFFECTS CAREER TRAJECTORY (EXACT RESUME ROLES & STEPPER)
+       SECTION: VISUAL CAREER TRAJECTORY & STEPPER (EXACT RESUME ROLES)
        ========================================================================== -->
   <section id="trajectory" class="career-visual-section">
     <div class="container">
@@ -1944,7 +2068,7 @@
     <div class="container">
       <div class="section-header-row">
         <div>
-          <span class="section-tag">TRANSFORMATIONAL OUTCOMES</span>
+          <span class="section-tag">PROJECT PORTFOLIO HIGHLIGHTS</span>
           <h2 class="section-heading">Featured Case Studies &amp; Project Portfolio</h2>
           <p class="section-subtitle">High-impact initiatives delivered across multinational organizations delivering measurable efficiency and rock-solid controls.</p>
         </div>
@@ -1965,9 +2089,9 @@
         <div class="project-card-bucket">
           <div>
             <span class="project-category-tag">GCC BUILD &amp; SCALE</span>
-            <h3 class="project-title">Global GCC Finance Buildout &amp; Centralization</h3>
+            <h3 class="project-title">Global GCC Finance Buildout &amp; Scaling</h3>
             <p class="project-summary">
-              Built and scaled centralized finance operating models covering all verticals of accounting, controllership, and FinOps for Jumio and Clarivate supporting worldwide legal entities across US, APAC, and EMEA.
+              Centralized multi-country finance operations supporting worldwide legal entities across US, APAC, and EMEA across Jumio and Clarivate, establishing high-governance COEs.
             </p>
           </div>
           <div class="project-outcome-box">
@@ -1980,9 +2104,9 @@
         <div class="project-card-bucket">
           <div>
             <span class="project-category-tag">M&amp;A INTEGRATION</span>
-            <h3 class="project-title">5+ Cross-Border Post-Merger Integrations</h3>
+            <h3 class="project-title">5+ Cross-Border Post-M&amp;A Integrations</h3>
             <p class="project-summary">
-              Led full-lifecycle finance integration, systems migration, chart of accounts unification, goodwill impairment valuations, tax harmonization, and statutory legal entity amalgamations/liquidations.
+              Harmonized systems, US GAAP / Ind AS accounting, tax structures, chart of accounts unification, goodwill impairment valuations, and statutory legal entity amalgamations/liquidations.
             </p>
           </div>
           <div class="project-outcome-box">
@@ -1995,9 +2119,9 @@
         <div class="project-card-bucket">
           <div>
             <span class="project-category-tag">DIGITAL CLOSE</span>
-            <h3 class="project-title">Digital Close Automation (Workiva &amp; BlackLine)</h3>
+            <h3 class="project-title">Digital Close Transformation (Workiva &amp; BlackLine)</h3>
             <p class="project-summary">
-              Deployed automated financial statement preparation in Workiva and real-time reconciliation controls in BlackLine, eliminating manual spreadsheets and drastically shortening close cycle timelines.
+              Automated financial statement prep in Workiva and real-time reconciliation controls in BlackLine, drastically reducing close cycle times and enabling continuous auditing.
             </p>
           </div>
           <div class="project-outcome-box">
@@ -2010,9 +2134,9 @@
         <div class="project-card-bucket">
           <div>
             <span class="project-category-tag">AUDIT EXCELLENCE</span>
-            <h3 class="project-title">100% Clean Big 4 Statutory Audit Track Record</h3>
+            <h3 class="project-title">10+ Clean Big 4 Statutory Audits (PwC)</h3>
             <p class="project-summary">
-              Managed statutory and group audits across 20+ legal entities in direct partnership with PwC, consistently securing clean audit opinions and zero unresolved audit observations with complete remediation.
+              Managed statutory and corporate audits across 20+ legal entities with 100% clean audit outcomes and complete remediation of management letter observations.
             </p>
           </div>
           <div class="project-outcome-box">
@@ -2025,9 +2149,9 @@
         <div class="project-card-bucket">
           <div>
             <span class="project-category-tag">GLOBAL COMPLIANCE</span>
-            <h3 class="project-title">Multi-Jurisdiction Transfer Pricing &amp; SOX Framework</h3>
+            <h3 class="project-title">Global Transfer Pricing &amp; Intercompany Framework</h3>
             <p class="project-summary">
-              Structured intercompany SLAs, cross-border cost-plus markups, arm's length transfer pricing documentation, and robust internal SOX 404 control matrices preventing compliance exposure.
+              Engineered automated TP markup models, multi-country transfer pricing documentation, and cross-border settlement mechanisms ensuring full tax compliance.
             </p>
           </div>
           <div class="project-outcome-box">
@@ -2036,71 +2160,112 @@
           </div>
         </div>
 
+        <!-- Project Card 6 -->
+        <div class="project-card-bucket">
+          <div>
+            <span class="project-category-tag">TEAM SCALING</span>
+            <h3 class="project-title">India GCC Team Scaling &amp; Mentorship</h3>
+            <p class="project-summary">
+              Built and mentored teams of 25+ finance professionals across Clarivate and Jumio GCC hubs, fostering high-performance cultures and structured career pathways.
+            </p>
+          </div>
+          <div class="project-outcome-box">
+            <div class="outcome-number">25+ Members</div>
+            <div class="outcome-text">High-performance capability center team scaling</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       SECTION: CORE EXECUTIVE STRENGTHS
+       SECTION: MANAGEMENT SKILLS & INDUSTRY DOMAINS (FROM RESUME PAGE 3)
        ========================================================================== -->
-  <section id="strengths">
+  <section id="skills" style="background: var(--bg-surface-subtle); border-top: 1px solid var(--border-card); border-bottom: 1px solid var(--border-card);">
     <div class="container">
       <div class="section-header-row">
         <div>
-          <span class="section-tag">LEADERSHIP PILLARS</span>
-          <h2 class="section-heading">Core Competencies &amp; Executive Focus</h2>
-          <p class="section-subtitle">A strategic combination of technical accounting rigor, governance, and operational execution.</p>
+          <span class="section-tag">EXECUTIVE LEADERSHIP &amp; DOMAINS</span>
+          <h2 class="section-heading">Management Skills &amp; Industry Expertise</h2>
+          <p class="section-subtitle">Core leadership competencies and cross-industry domain exposure.</p>
         </div>
       </div>
 
-      <div class="strengths-grid">
+      <!-- Industry Domains Pills -->
+      <div class="industry-pills-row">
+        <span class="industry-pill">
+          <i data-lucide="cpu" style="width: 16px; height: 16px; color: var(--primary-blue);"></i>
+          <span>SaaS &amp; AI Technology</span>
+        </span>
+        <span class="industry-pill">
+          <i data-lucide="zap" style="width: 16px; height: 16px; color: var(--accent-amber);"></i>
+          <span>Energy &amp; Environmental Services</span>
+        </span>
+        <span class="industry-pill">
+          <i data-lucide="building-2" style="width: 16px; height: 16px; color: var(--accent-emerald);"></i>
+          <span>GCC / Shared Services &amp; COE</span>
+        </span>
+        <span class="industry-pill">
+          <i data-lucide="flask-conical" style="width: 16px; height: 16px; color: var(--accent-indigo);"></i>
+          <span>Scientific &amp; IP Analytics</span>
+        </span>
+        <span class="industry-pill">
+          <i data-lucide="book-open" style="width: 16px; height: 16px; color: var(--accent-teal);"></i>
+          <span>Publishing &amp; Education</span>
+        </span>
+        <span class="industry-pill">
+          <i data-lucide="code" style="width: 16px; height: 16px; color: var(--primary-blue);"></i>
+          <span>Software / IT Services</span>
+        </span>
+      </div>
+
+      <!-- Management Skills Matrix (3 Columns) -->
+      <div class="skills-matrix-grid">
         
-        <div class="strength-card">
-          <div class="strength-icon">
-            <i data-lucide="shield-check" style="width: 24px; height: 24px;"></i>
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <div class="matrix-icon">
+              <i data-lucide="users" style="width: 22px; height: 22px;"></i>
+            </div>
+            <h3 class="matrix-title">Team Leadership &amp; Development</h3>
           </div>
-          <h3 class="strength-title">Multi-GAAP Financial Governance</h3>
-          <p class="strength-desc">Deep technical expertise in US GAAP, IFRS, and Ind AS revenue recognition (ASC 606 / IFRS 15), lease accounting (ASC 842), stock-based compensation (ASC 718), and consolidation.</p>
+          <ul class="matrix-list">
+            <li>Team Leadership &amp; Scaling</li>
+            <li>Talent Incubation &amp; Mentorship</li>
+            <li>Performance Management Frameworks</li>
+            <li>Global Cross-Functional Collaboration</li>
+          </ul>
         </div>
 
-        <div class="strength-card">
-          <div class="strength-icon">
-            <i data-lucide="building-2" style="width: 24px; height: 24px;"></i>
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <div class="matrix-icon">
+              <i data-lucide="message-square" style="width: 22px; height: 22px;"></i>
+            </div>
+            <h3 class="matrix-title">Communication &amp; Collaboration</h3>
           </div>
-          <h3 class="strength-title">GCC / Shared Services Buildout</h3>
-          <p class="strength-desc">Proven experience setting up and scaling 2 successful GCC hubs in India from zero, designing SLAs, hiring high-caliber talent, and managing global controllership operations.</p>
+          <ul class="matrix-list">
+            <li>Executive Stakeholder Management</li>
+            <li>Commercial Business Partnering</li>
+            <li>Strategic Planning &amp; AOP Alignment</li>
+            <li>Cross-Border Cultural Integration</li>
+          </ul>
         </div>
 
-        <div class="strength-card">
-          <div class="strength-icon">
-            <i data-lucide="git-merge" style="width: 24px; height: 24px;"></i>
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <div class="matrix-icon">
+              <i data-lucide="shield" style="width: 22px; height: 22px;"></i>
+            </div>
+            <h3 class="matrix-title">Analytical &amp; Strategic Governance</h3>
           </div>
-          <h3 class="strength-title">Post-M&amp;A Integration &amp; Carve-Outs</h3>
-          <p class="strength-desc">Executed post-acquisition financial integrations across 6+ entities, harmonizing charts of accounts, ERP migrations, goodwill impairment, and statutory amalgamations.</p>
-        </div>
-
-        <div class="strength-card">
-          <div class="strength-icon">
-            <i data-lucide="cpu" style="width: 24px; height: 24px;"></i>
-          </div>
-          <h3 class="strength-title">Digital Finance Transformation</h3>
-          <p class="strength-desc">Accelerating financial close cycles through intelligent automation with NetSuite, OneStream, Workiva, BlackLine, and Tipalti to eliminate manual bottlenecks and enable continuous auditing.</p>
-        </div>
-
-        <div class="strength-card">
-          <div class="strength-icon">
-            <i data-lucide="file-check" style="width: 24px; height: 24px;"></i>
-          </div>
-          <h3 class="strength-title">Statutory Audit &amp; Big 4 Management</h3>
-          <p class="strength-desc">17-year spotless track record managing complex group and statutory audits with PwC and other Big 4 firms with zero material weaknesses or unadjusted audit differences.</p>
-        </div>
-
-        <div class="strength-card">
-          <div class="strength-icon">
-            <i data-lucide="landmark" style="width: 24px; height: 24px;"></i>
-          </div>
-          <h3 class="strength-title">Transfer Pricing &amp; Global Tax</h3>
-          <p class="strength-desc">Mastery of cross-border transfer pricing documentation, intercompany agreements, BEPS compliance, direct/indirect tax, and treasury cash repatriation frameworks.</p>
+          <ul class="matrix-list">
+            <li>Finance Operating Model Design</li>
+            <li>Audit &amp; Risk Committee Governance</li>
+            <li>Strategic Decision Modeling</li>
+            <li>Process Standardization &amp; Continuous Impr.</li>
+          </ul>
         </div>
 
       </div>
@@ -2108,14 +2273,14 @@
   </section>
 
   <!-- ==========================================================================
-       SECTION: ERP, SYSTEMS & GOVERNANCE STACK (MATCHING RESUME PROFICIENCIES)
+       SECTION: ERP, SYSTEMS & GOVERNANCE STACK (FROM RESUME PAGE 3)
        ========================================================================== -->
   <section id="arsenal">
     <div class="container">
       <div class="section-header-row">
         <div>
           <span class="section-tag">TECHNICAL ARSENAL</span>
-          <h2 class="section-heading">ERP, Systems &amp; Governance Stack</h2>
+          <h2 class="section-heading">Tools &amp; Technical Proficiencies</h2>
           <p class="section-subtitle">Technical proficiencies, enterprise tools, and governance frameworks extracted directly from executive credentials.</p>
         </div>
       </div>
@@ -2168,6 +2333,21 @@
 
         <div class="arsenal-card">
           <h3 class="arsenal-category">
+            <i data-lucide="layers" style="width: 18px; height: 18px; color: var(--primary-blue);"></i>
+            <span>Finance Operations &amp; Towers</span>
+          </h3>
+          <div class="tags-cloud">
+            <span class="tool-tag">Record-to-Report (R2R)</span>
+            <span class="tool-tag">Order-to-Cash (O2C)</span>
+            <span class="tool-tag">Procure-to-Pay (P2P)</span>
+            <span class="tool-tag">Intercompany Accounting</span>
+            <span class="tool-tag">Accounts Payable / Receivable (AP/AR)</span>
+            <span class="tool-tag">People Cost Accounting</span>
+          </div>
+        </div>
+
+        <div class="arsenal-card">
+          <h3 class="arsenal-category">
             <i data-lucide="scale" style="width: 18px; height: 18px; color: var(--primary-blue);"></i>
             <span>Accounting &amp; Governance</span>
           </h3>
@@ -2186,18 +2366,19 @@
   </section>
 
   <!-- ==========================================================================
-       SECTION: EDUCATION & CREDENTIALS (EXACT DETAILS FROM RESUME)
+       SECTION: EDUCATION & PROFESSIONAL CERTIFICATIONS (FROM RESUME PAGE 3)
        ========================================================================== -->
   <section id="education">
     <div class="container">
       <div class="section-header-row">
         <div>
-          <span class="section-tag">ACADEMIC FOUNDATION</span>
+          <span class="section-tag">CREDENTIALS &amp; ACADEMICS</span>
           <h2 class="section-heading">Education Details &amp; Certifications</h2>
-          <p class="section-subtitle">Academic qualifications and certifications as listed on the official executive resume.</p>
+          <p class="section-subtitle">Academic qualifications, chartered accountancy credentials, and specialized executive training.</p>
         </div>
       </div>
 
+      <!-- Academic Degrees Grid -->
       <div class="edu-grid">
         
         <div class="edu-card">
@@ -2234,6 +2415,54 @@
         </div>
 
       </div>
+
+      <!-- Professional Certifications & Training -->
+      <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-top: 36px; margin-bottom: 16px;">
+        Professional Certifications &amp; Executive Training
+      </h3>
+      <div class="cert-grid">
+        
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i data-lucide="shield-check" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="cert-info">
+            <span class="cert-name">Associate Chartered Accountant (ACA)</span>
+            <span class="cert-org">Institute of Chartered Accountants of India (ICAI)</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i data-lucide="briefcase" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="cert-info">
+            <span class="cert-name">Executive Leadership &amp; Global Controllership</span>
+            <span class="cert-org">GCC &amp; Global COE Frameworks</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="cert-info">
+            <span class="cert-name">General Management &amp; Communication Skills (GMCS)</span>
+            <span class="cert-org">ICAI Certification</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i data-lucide="sparkles" style="width: 20px; height: 20px;"></i>
+          </div>
+          <div class="cert-info">
+            <span class="cert-name">Digital Finance Transformation Specialist</span>
+            <span class="cert-org">Workiva &amp; BlackLine Automation</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -2260,7 +2489,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: #FFFFFF; flex-shrink: 0;"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
             <span>Connect on LinkedIn</span>
           </a>
-          <a href="assets/Rajkumar_Singh_Executive_Resume.pdf" download="Rajkumar_Singh_Executive_Resume.pdf" class="btn-contact-ghost">
+          <a href="Rajkumar_Singh_Executive_Resume.pdf" download="Rajkumar_Singh_Executive_Resume.pdf" onclick="downloadExecutiveResume(event)" class="btn-contact-ghost">
             <i data-lucide="download" style="width: 18px; height: 18px;"></i>
             <span>Download Resume PDF</span>
           </a>
@@ -2288,7 +2517,7 @@
       {
         company: "JUMIO CORPORATION",
         sector: "Global Controllership & GCC Leadership",
-        role: "Associate Director – India Finance Lead / Global Controllership",
+        role: "Associate Director - Global Accounting – India Finance Lead / Global Controllership",
         period: "June 2026 – Present • Hyderabad, India",
         stats: [
           { num: "Worldwide", label: "Legal Entity Scope" },
@@ -2676,7 +2905,6 @@
     window.addEventListener('DOMContentLoaded', () => {
       initAllCharts();
     });
-    // Fallback if already loaded
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
       initAllCharts();
     }
